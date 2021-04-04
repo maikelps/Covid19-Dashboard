@@ -130,12 +130,13 @@ time_tosee = [
 ]
 
 # Image file:
-image_filename = 'nova_ims.png'
+#image_filename = 'nova_ims.png'
 #encoded_image = base64.b64encode(open(image_filename, 'rb').read())
 
 # The app itself
 
 app = dash.Dash(__name__, external_stylesheets='')
+server = app.server
 
 app.layout = html.Div([
 
@@ -147,7 +148,7 @@ app.layout = html.Div([
         html.Div([
 
             #html.Img(src='data:image/png;base64,{}'.format(encoded_image.decode()), style={'width': '150px'}),
-            html.H2(':('),
+            html.Img(src='https://www.novaims.unl.pt/images/logo.png', style={'width': '130px'}),
 
         ], style={'width': '10%'}, className='ims-image'),
 
