@@ -18,16 +18,16 @@ from pandas.tseries.offsets import MonthEnd
 from pandas.tseries.offsets import *
 import numpy as np
 import base64
-#from preprocessing_covid import general_clean, europe_cleaning
+from preprocessing_covid import general_clean, europe_cleaning
 
 # Importing Preprocessed Data
 
-dfh = pd.read_csv('reprocessed_cases_country.csv')
-dfv = pd.read_csv('preprocessed_vaccination_country.csv')
+#dfh = pd.read_csv('reprocessed_cases_country.csv')
+#dfv = pd.read_csv('preprocessed_vaccination_country.csv')
 
-#df = pd.read_csv('https://covid.ourworldindata.org/data/owid-covid-data.csv')
+df = pd.read_csv('https://covid.ourworldindata.org/data/owid-covid-data.csv')
 
-#dfh , dfv = europe_cleaning(df, pop = 5000000)
+dfh , dfv = europe_cleaning(df, pop = 5000000)
 
 # Define selection
 
