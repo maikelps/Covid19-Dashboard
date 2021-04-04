@@ -17,7 +17,30 @@ import pandas as pd
 from pandas.tseries.offsets import MonthEnd
 from pandas.tseries.offsets import *
 import numpy as np
-#from preprocessing_covid import europe_cleaning
+#import base64
+#from preprocessing_covid import general_clean, europe_cleaning
+
+
+##### DEFINING HELPER FUNCTIONS FOR PREPROCESSING #####
+
+def general_clean(df):
+    """
+    Function for a basic cleaning of the raw dataframe
+    """
+
+    
+
+    # Cleaning rows
+    row_cleaner = [ 'Africa', 'Asia', 'Central African Republic', 
+                    'World', 'Europe', 'Oceania', 'South America', 
+                    'European Union', 'Anguilla', 'Bosnia and Herzegovina',
+                    'Brunei', 'Chad', 'Comoros', 'Djibouti', 'Equatorial Guinea',
+                    'Eritrea', 'Eswatini','Gabon', 'Greenland', 'Grenada',
+                    'Lesotho', 'Malawi', 'Micronesia (country)', 'Saint Helena', 
+                    'Saint Kitts and Nevis', 'Saint Lucia', 'Saint Vincent and the Grenadines',
+                    'Seychelles', 'Turks and Caicos Islands' ]
+
+    return df[ ~df.location.isin(row_cleaner) ]
 
 def europe_cleaning(df, pop = 5000000):
     """
@@ -25,19 +48,9 @@ def europe_cleaning(df, pop = 5000000):
     """
 
     # Doing Basic cleaning:
-    g1columns = ['iso_code', 'continent', 'location', 'date',
-             'new_cases', 'new_deaths', 'new_cases_per_million', 'new_deaths_per_million',
-             'total_cases', 'total_deaths', 'total_cases_per_million', 'total_deaths_per_million',
-             'total_vaccinations', 'new_vaccinations', 'people_vaccinated_per_hundred',
-             'population','gdp_per_capita', 'human_development_index']
-
-    df = df[g1columns]
-
-    # Cleaning date
-    df['date'] = df.date.apply(pd.to_datetime)
+    df = general_clean(df)
 
     # Filtering: 
-    df = df[ ~df.location.isin(['Europe']) ]
     df = df[ df.continent == 'Europe']
 
     # Keeping values with no NaN values in gdp:
