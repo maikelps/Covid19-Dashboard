@@ -18,7 +18,7 @@ from pandas.tseries.offsets import MonthEnd
 from pandas.tseries.offsets import *
 import numpy as np
 import base64
-from preprocessing_covid import general_clean, europe_cleaning
+#from preprocessing_covid import general_clean, europe_cleaning
 
 # Importing Preprocessed Data
 
