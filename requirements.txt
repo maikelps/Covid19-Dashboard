@@ -1,0 +1,10 @@
+dash
+dash_core_components
+dash_html_components
+dash.dependencies
+plotly
+datetime
+pandas
+pandas.tseries.offsets
+numpy
+base64
