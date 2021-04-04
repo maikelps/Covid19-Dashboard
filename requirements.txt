@@ -5,3 +5,4 @@ plotly
 datetime
 pandas
 numpy
+base64
