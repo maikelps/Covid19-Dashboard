@@ -28,16 +28,7 @@ def general_clean(df):
     Function for a basic cleaning of the raw dataframe
     """
 
-    g1columns = ['iso_code', 'continent', 'location', 'date',
-             'new_cases', 'new_deaths', 'new_cases_per_million', 'new_deaths_per_million',
-             'total_cases', 'total_deaths', 'total_cases_per_million', 'total_deaths_per_million',
-             'total_vaccinations', 'new_vaccinations', 'people_vaccinated_per_hundred',
-             'population','gdp_per_capita', 'human_development_index']
-
-    df = df[g1columns]
-
-    # Cleaning date
-    df['date'] = df.date.apply(pd.to_datetime)
+    
 
     # Cleaning rows
     row_cleaner = [ 'Africa', 'Asia', 'Central African Republic', 
@@ -156,7 +147,7 @@ app.layout = html.Div([
         html.Div([
 
             #html.Img(src='data:image/png;base64,{}'.format(encoded_image.decode()), style={'width': '150px'}),
-            html.Img(src=image_filename, style={'width': '150px'}),
+            html.H2(':('),
 
         ], style={'width': '10%'}, className='ims-image'),
 
