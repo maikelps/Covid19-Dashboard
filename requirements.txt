@@ -4,6 +4,5 @@ dash_html_components
 plotly
 datetime
 pandas
-pandas.tseries.offsets
 numpy
 base64
