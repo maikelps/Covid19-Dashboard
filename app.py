@@ -17,13 +17,13 @@ import pandas as pd
 from pandas.tseries.offsets import MonthEnd
 from pandas.tseries.offsets import *
 import numpy as np
-import base64
+#import base64
 from preprocessing_covid import general_clean, europe_cleaning
 
 # Importing Preprocessed Data
 
-#dfh = pd.read_csv('reprocessed_cases_country.csv')
-#dfv = pd.read_csv('preprocessed_vaccination_country.csv')
+#dfh = pd.read_csv('Data/preprocessed_cases_country.csv')
+#dfv = pd.read_csv('Data/preprocessed_vaccination_country.csv')
 
 df = pd.read_csv('https://covid.ourworldindata.org/data/owid-covid-data.csv')
 
@@ -68,7 +68,7 @@ time_tosee = [
 
 # Image file:
 image_filename = 'nova_ims.png'
-encoded_image = base64.b64encode(open(image_filename, 'rb').read())
+#encoded_image = base64.b64encode(open(image_filename, 'rb').read())
 
 # The app itself
 
@@ -83,7 +83,8 @@ app.layout = html.Div([
 
         html.Div([
 
-            html.Img(src='data:image/png;base64,{}'.format(encoded_image.decode()), style={'width': '150px'}),
+            #html.Img(src='data:image/png;base64,{}'.format(encoded_image.decode()), style={'width': '150px'}),
+            html.Img(src=image_filename, style={'width': '150px'}),
 
         ], style={'width': '10%'}, className='ims-image'),
 
